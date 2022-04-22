@@ -1,0 +1,67 @@
+package que_me_pongo;
+
+import java.util.LinkedList;
+
+
+class Prenda {
+	
+	String parteDelCuerpo;
+	String tela;
+	String colorPrimario;
+	boolean tieneColorSecundario;
+	
+	Prenda(String parteCuerpo, String tela, String color, boolean colorSecundario){
+		this.parteDelCuerpo = parteCuerpo;
+		this.tela = tela;
+		this.colorPrimario = color;
+		this.tieneColorSecundario = colorSecundario;
+	}
+}
+	
+// se deberia crear una clase que herede de prenda por cada tipo de prenda
+
+class Calzado extends Prenda{
+
+	Calzado(String tela, String color, boolean tieneSecundario) {
+		super("pies", tela, color, tieneSecundario);
+		// TODO Auto-generated constructor stub
+	}
+	
+}
+
+class Remera extends Prenda{
+
+	Remera(String parteCuerpo, String tela, String color, boolean tieneSecundario) {
+		super("pecho", tela, color, tieneSecundario);
+		// TODO Auto-generated constructor stub
+	}
+	
+}
+
+class Gorro extends Prenda{
+
+	Gorro(String parteCuerpo, String tela, String color, boolean tieneSecundario) {
+		super("cabeza", tela, color, tieneSecundario);
+		// TODO Auto-generated constructor stub
+	}
+	
+}
+
+class Pantalones extends Prenda{
+
+	Pantalones(String parteCuerpo, String tela, String color, boolean tieneSecundario) {
+		super("piernas", tela, color, tieneSecundario);
+		// TODO Auto-generated constructor stub
+	}
+	
+}
+
+class Atuendo{
+	LinkedList<Prenda> prendas = new LinkedList<Prenda>();
+	
+	
+	void agregarPrenda(Prenda prenda) {
+		prendas.addLast(prenda);
+		
+	}
+}
