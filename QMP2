@@ -1,0 +1,84 @@
+package que_me_pongo;
+
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
+
+class TipoPrenda{
+	Categoria categoria;
+	
+	TipoPrenda(Categoria categoria){
+		this.categoria = categoria;
+	}
+
+	TipoPrenda ZAPATO = new TipoPrenda(Categoria.CALZADO);
+	TipoPrenda REMERA = new TipoPrenda(Categoria.SUPERIOR);
+	TipoPrenda GORRO = new TipoPrenda(Categoria.ACCESORIO);
+	//....
+}
+
+enum Categoria{
+	CALZADO, ACCESORIO, SUPERIOR, INFERIOR
+}
+
+class Tela{
+	Tramado tramado;
+	
+	Tela(Tramado tramado){
+		this.tramado = tramado;
+	}
+	
+	Tela(){
+		this.tramado = Tramado.LISA;
+	}
+}
+
+enum Tramado{
+	CUADROS, LISA, ESTAMPADO, RAYADA, LUNARES
+}
+
+enum Color{
+	ROJO, AMARILLO, AZUL//...
+}
+
+class Prenda{
+	TipoPrenda tipo;
+	Tela tela;
+	Color color;
+	Color secundario;
+	
+	//TODO agregar setter para darle forma a la prenda en borrador
+	/*
+	Prenda(TipoPrenda tipo, Tela tela, Color color){
+		this.tipo = tipo;
+		this.tela = tela;
+		this.color = color;
+	}
+	
+	Prenda(TipoPrenda tipo, Tela tela, Color color, Color secundario){
+		this.tipo = tipo;
+		this.tela = tela;
+		this.color = color;
+		this.secundario = secundario;
+	}
+	*/
+}
+
+class Borrador{
+	Prenda prenda;
+	
+	void setTipo(TipoPrenda tipo) {
+		prenda.setTipo(tipo);
+	}
+	
+	void setMateriales(Color color, Tela tela) {
+		prenda.setColor(color);
+		prenda.setTela(tela);
+		
+		}
+
+	void crearPrenda() {
+		this.prenda = new Prenda();
+	}
+	
+}
